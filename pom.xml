@@ -1,26 +1,24 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.pkj</groupId>
-  <artifactId>skeleton</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>pom</packaging>
+	<groupId>com.pkj</groupId>
+	<artifactId>skeleton</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
 
-  <name>skeleton</name>
-  <url>http://maven.apache.org</url>
+	<properties>
+		<spring.version>4.1.4.RELEASE</spring.version>
+		<junit.version>4.1</junit.version>
+		<skeleton.version>0.0.1-SNAPSHOT</skeleton.version>
+	</properties>
 
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
-  <modules>
-  	<module>skeleton-webapp</module>
-  	<module>skeleton-service</module>
-  	<module>skeleton-data</module>
-  </modules>
+	<name>skeleton</name>
+	<url>http://maven.apache.org</url>
+
+	<modules>
+		<module>skeleton-webapp</module>
+		<module>skeleton-service</module>
+		<module>skeleton-data</module>
+	</modules>
 </project>
