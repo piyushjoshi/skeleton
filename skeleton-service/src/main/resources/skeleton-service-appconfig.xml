@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+	<beans profile="dev">
+		<bean id="skeleton_service_dev"
+			class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+			<property name="ignoreUnresolvablePlaceholders" value="true" />
+			<property name="locations">
+				<list>
+					<value>classpath:skeleton-service-dev.properties</value>
+				</list>
+			</property>
+		</bean>
+	</beans>
+
+	<beans profile="qa">
+		<bean id="skeleton_service_qa"
+			class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+			<property name="ignoreUnresolvablePlaceholders" value="true" />
+			<property name="locations">
+				<list>
+					<value>classpath:skeleton-service-qa.properties</value>
+				</list>
+			</property>
+		</bean>
+	</beans>
+
+	<beans profile="prod">
+		<bean id="skeleton_service_prod"
+			class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+			<property name="ignoreUnresolvablePlaceholders" value="true" />
+			<property name="locations">
+				<list>
+					<value>classpath:skeleton-service-prod.properties</value>
+				</list>
+			</property>
+		</bean>
+	</beans>
+
+</beans>
