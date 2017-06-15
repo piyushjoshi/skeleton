@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+	<bean id="SampleSQSQueue" class="com.pkj.skeleton.sqs.SimpleSQSQueue">
+		<constructor-arg name="queueUrl"
+			value="${skeleton.service.aws.sample.sqs.url}"></constructor-arg>
+		<constructor-arg name="accessKey" value="${aws.access.key}"></constructor-arg>
+		<constructor-arg name="secretKey" value="${aws.secret.key}"></constructor-arg>
+	</bean>
+
+	<bean id="SampleSQSListener" class="com.pkj.skeleton.sqs.SampleSQSListener">
+	</bean>
+
+	<bean id="SampleSQSQueuePoller" class="com.pkj.skeleton.sqs.SimpleSQSPoller">
+		<constructor-arg name="sqsQueue" ref="SampleSQSQueue"></constructor-arg>
+		<constructor-arg name="pollingInterval"
+			value="${sample.sqs.poller.pollinginterval}"></constructor-arg>
+		<constructor-arg name="retryInterval"
+			value="${sample.sqs.poller.retryinterval}"></constructor-arg>
+		<constructor-arg name="pollerThreads" value="${sample.sqs.poller.threads}"></constructor-arg>
+		<constructor-arg>
+			<list>
+				<ref bean="SampleSQSListener" />
+			</list>
+		</constructor-arg>
+	</bean>
+
+</beans>

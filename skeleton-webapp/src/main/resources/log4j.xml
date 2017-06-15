@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration threshold="all"
+	xmlns:log4j="http://jakarta.apache.org/log4j/">
+	<!-- APPENDERS =========================================== -->
+	<appender name="FILE" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="/var/log/applog/skeleton.log" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%t] [%p] %d %c:%M():%L - %m%n" />
+		</layout>
+	</appender>
+
+	<!-- LOGGERS ============================================= -->
+	<logger name="com.freecharge" additivity="false">
+		<level value="INFO" />
+		<appender-ref ref="FILE" />
+	</logger>
+
+	<root>
+		<priority value="INFO" />
+		<appender-ref ref="FILE" />
+	</root>
+</log4j:configuration>

@@ -7,7 +7,6 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-
 	<import resource="classpath:skeleton-webapp-context.xml" />
 
 	<import resource="classpath:skeleton-data-context.xml" />
